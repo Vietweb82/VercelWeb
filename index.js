@@ -1,12 +1,18 @@
-// index.js
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Middleware đọc json
+app.use(express.json());
+
+// Import router
+const userRouter = require('./api/users');
+app.use('/api/users', userRouter);
+
 app.get('/', (req, res) => {
-  res.send('Hello Vercel + Express!');
+  res.send('Hello Express + Vercel!');
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
