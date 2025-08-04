@@ -10,7 +10,7 @@ const userRouter = require('./api/users');
 app.use('/api/users', userRouter);
 
 app.get('/', (req, res) => {
-  res.send('Hello Express + Vercel!');
+  res.send('Hello Express + Vercel! Server running on port: 3000 ');
 });
 
 app.listen(PORT, () => {
